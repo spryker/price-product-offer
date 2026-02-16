@@ -29,7 +29,7 @@ class ValidUniqueStoreCurrencyGrossNetConstraintValidator extends AbstractConstr
     public function validate($value, Constraint $constraint): void
     {
         $priceProductOfferTransfer = $value;
-        if (!$priceProductOfferTransfer instanceof PriceProductOfferTransfer) {
+        if (!$priceProductOfferTransfer instanceof PriceProductOfferTransfer) { // @phpstan-ignore instanceof.alwaysTrue
             throw new UnexpectedTypeException($priceProductOfferTransfer, PriceProductOfferTransfer::class);
         }
 

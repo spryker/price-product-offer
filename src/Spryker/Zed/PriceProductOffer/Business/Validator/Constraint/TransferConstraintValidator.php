@@ -34,7 +34,7 @@ class TransferConstraintValidator extends ConstraintValidator
         if ($abstractTransfer === null) {
             return;
         }
-        if (!$abstractTransfer instanceof AbstractTransfer) {
+        if (!$abstractTransfer instanceof AbstractTransfer) { // @phpstan-ignore instanceof.alwaysTrue
             throw new UnexpectedValueException($abstractTransfer, AbstractTransfer::class);
         }
 
@@ -67,7 +67,7 @@ class TransferConstraintValidator extends ConstraintValidator
 
         $transferData = $abstractTransfer->toArray(false, true);
         foreach ($constraint->fields as $field => $fieldConstraint) {
-            $existsInArray = is_array($transferData) && array_key_exists($field, $transferData);
+            $existsInArray = is_array($transferData) && array_key_exists($field, $transferData); // @phpstan-ignore function.alreadyNarrowedType
 
             if (!$existsInArray) {
                 $this->context->buildViolation($constraint->getMissingFieldsMessage())

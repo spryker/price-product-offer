@@ -29,7 +29,7 @@ class ValidUniqueStoreCurrencyCollectionConstraintValidator extends AbstractCons
     public function validate($value, Constraint $constraint): void
     {
         $priceProductOfferTransfers = $value;
-        if (!$priceProductOfferTransfers instanceof Traversable) {
+        if (!$priceProductOfferTransfers instanceof Traversable) { // @phpstan-ignore instanceof.alwaysTrue
             throw new UnexpectedTypeException($priceProductOfferTransfers, Traversable::class);
         }
 
@@ -38,7 +38,7 @@ class ValidUniqueStoreCurrencyCollectionConstraintValidator extends AbstractCons
         }
 
         foreach ($priceProductOfferTransfers as $priceProductOfferIndex => $priceProductOfferTransfer) {
-            if (!$priceProductOfferTransfer instanceof PriceProductOfferTransfer) {
+            if (!$priceProductOfferTransfer instanceof PriceProductOfferTransfer) { // @phpstan-ignore instanceof.alwaysTrue
                 throw new UnexpectedTypeException($priceProductOfferTransfer, PriceProductOfferTransfer::class);
             }
 
