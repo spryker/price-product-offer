@@ -85,7 +85,7 @@ class PriceProductOfferFacadeTest extends Unit
         $priceProductFacadeMock
             ->expects($this->once())
             ->method('persistProductConcretePriceCollection')
-            ->will($this->returnCallback(function (ProductConcreteTransfer $productConcreteTransfer) use ($productOfferTransfer) {
+            ->willReturnCallback(function (ProductConcreteTransfer $productConcreteTransfer) use ($productOfferTransfer) {
                 $priceProductTransfer = $productConcreteTransfer->getPrices()[0];
                 $this->assertCount(1, $productConcreteTransfer->getPrices());
                 $this->assertSame($productOfferTransfer->getIdProductConcrete(), $productConcreteTransfer->getIdProductConcrete());
@@ -93,7 +93,7 @@ class PriceProductOfferFacadeTest extends Unit
                 $this->assertSame(PriceProductOfferConfig::DIMENSION_TYPE_PRODUCT_OFFER, $priceProductTransfer->getPriceDimension()->getType());
 
                 return $productConcreteTransfer;
-            }));
+            });
 
         $this->tester->setDependency(PriceProductOfferDependencyProvider::FACADE_PRICE_PRODUCT, $priceProductFacadeMock);
 
