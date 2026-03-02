@@ -66,11 +66,6 @@ class PriceProductOfferValidator implements PriceProductOfferValidatorInterface
         $this->translatorFacade = $translatorFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductOfferCollectionTransfer $priceProductOfferCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ValidationResponseTransfer
-     */
     public function validateProductOfferPrices(
         PriceProductOfferCollectionTransfer $priceProductOfferCollectionTransfer
     ): ValidationResponseTransfer {
@@ -133,12 +128,6 @@ class PriceProductOfferValidator implements PriceProductOfferValidatorInterface
         return $validationResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductOfferCollectionTransfer $priceProductOfferCollectionTransfer
-     * @param \Generated\Shared\Transfer\ValidationResponseTransfer $validationResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ValidationResponseTransfer
-     */
     protected function executePriceProductOfferValidatorPlugins(
         PriceProductOfferCollectionTransfer $priceProductOfferCollectionTransfer,
         ValidationResponseTransfer $validationResponseTransfer
@@ -157,11 +146,6 @@ class PriceProductOfferValidator implements PriceProductOfferValidatorInterface
         return $validationResponseTransfer;
     }
 
-    /**
-     * @param \Symfony\Component\Validator\ConstraintViolationInterface $constraintViolation
-     *
-     * @return \Generated\Shared\Transfer\ValidationErrorTransfer
-     */
     protected function mapConstraintViolationToValidationErrorTransfer(
         ConstraintViolationInterface $constraintViolation
     ): ValidationErrorTransfer {
@@ -178,14 +162,6 @@ class PriceProductOfferValidator implements PriceProductOfferValidatorInterface
             ->setRoot($root);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     * @param int $priceProductOfferIndex
-     * @param int $priceProductIndex
-     * @param \Generated\Shared\Transfer\ValidationResponseTransfer $validationResponseTransfer
-     *
-     * @return void
-     */
     protected function validatePriceProduct(
         PriceProductTransfer $priceProductTransfer,
         int $priceProductOfferIndex,
@@ -218,12 +194,6 @@ class PriceProductOfferValidator implements PriceProductOfferValidatorInterface
         }
     }
 
-    /**
-     * @param int $priceProductOfferIndex
-     * @param int $priceProductIndex
-     *
-     * @return string
-     */
     protected function createViolationPath(
         int $priceProductOfferIndex,
         int $priceProductIndex
@@ -238,12 +208,6 @@ class PriceProductOfferValidator implements PriceProductOfferValidatorInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     * @param string $propertyPath
-     *
-     * @return string|null
-     */
     protected function addPriceTypeToPropertyPath(
         PriceProductTransfer $priceProductTransfer,
         string $propertyPath

@@ -25,10 +25,6 @@ class PriceProductOfferWishlistExpander implements PriceProductOfferWishlistExpa
      */
     protected $storeFacade;
 
-    /**
-     * @param \Spryker\Zed\PriceProductOffer\Business\Reader\PriceProductOfferReaderInterface $priceProductOfferReader
-     * @param \Spryker\Zed\PriceProductOffer\Dependency\Facade\PriceProductOfferToStoreFacadeInterface $storeFacade
-     */
     public function __construct(
         PriceProductOfferReaderInterface $priceProductOfferReader,
         PriceProductOfferToStoreFacadeInterface $storeFacade
@@ -37,11 +33,6 @@ class PriceProductOfferWishlistExpander implements PriceProductOfferWishlistExpa
         $this->storeFacade = $storeFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\WishlistItemTransfer $wishlistItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\WishlistItemTransfer
-     */
     public function expandWishlistItemWithPrices(WishlistItemTransfer $wishlistItemTransfer): WishlistItemTransfer
     {
         if (!$wishlistItemTransfer->getProductOfferReference()) {

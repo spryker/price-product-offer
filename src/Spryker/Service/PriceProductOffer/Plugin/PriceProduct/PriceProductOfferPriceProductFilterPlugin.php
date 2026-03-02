@@ -57,9 +57,6 @@ class PriceProductOfferPriceProductFilterPlugin extends AbstractPlugin implement
         return $priceProductTransfers;
     }
 
-    /**
-     * @return string
-     */
     public function getDimensionName(): string
     {
         return PriceProductOfferConfig::DIMENSION_TYPE_PRODUCT_OFFER;

@@ -48,9 +48,6 @@ class PriceProductOfferFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -58,9 +55,6 @@ class PriceProductOfferFacadeTest extends Unit
         $this->tester->ensurePriceProductOfferTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     protected function tearDown(): void
     {
         parent::tearDown();
@@ -70,9 +64,6 @@ class PriceProductOfferFacadeTest extends Unit
         });
     }
 
-    /**
-     * @return void
-     */
     public function testSaveProductOfferPricesCallsPriceProductFacadeWithCorrectData(): void
     {
         // Arrange
@@ -101,9 +92,6 @@ class PriceProductOfferFacadeTest extends Unit
         $this->tester->getFacade()->saveProductOfferPrices($productOfferTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testSavePriceProductOfferRelationCreatesPriceProductOfferEntity(): void
     {
         // Arrange
@@ -122,9 +110,6 @@ class PriceProductOfferFacadeTest extends Unit
         $this->assertSame((string)$priceProductTransfer->getMoneyValue()->getIdEntity(), $priceProductOfferTransfer->getFkPriceProductStore());
     }
 
-    /**
-     * @return void
-     */
     public function testSavePriceProductOfferRelationUpdatesPriceProductOfferEntity(): void
     {
         // Arrange
@@ -146,9 +131,6 @@ class PriceProductOfferFacadeTest extends Unit
         $this->assertSame($priceProductOfferTransfer->getFkPriceProductStore(), (string)$priceProductTransfer2->getMoneyValue()->getIdEntity());
     }
 
-    /**
-     * @return void
-     */
     public function testExpandProductOfferWithPricesExpandsProductOfferWithCorrectPriceProduct(): void
     {
         // Arrange
@@ -302,9 +284,6 @@ class PriceProductOfferFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return array
-     */
     public function validateProductOfferPricesFailValidNetAmountValueDataProvider(): array
     {
         return [
@@ -460,9 +439,6 @@ class PriceProductOfferFacadeTest extends Unit
         $this->assertCount(2, $productOfferPrices);
     }
 
-    /**
-     * @return void
-     */
     public function testGetProductOfferPricesForMultipleProductOfferReferencesShouldReturnCorrectResult(): void
     {
         // Arrange
@@ -495,9 +471,6 @@ class PriceProductOfferFacadeTest extends Unit
         $this->assertEqualsCanonicalizing($expectedProductOfferIds, $productOfferIds);
     }
 
-    /**
-     * @return void
-     */
     public function testGetProductOfferPricesForProductOfferReferenceShouldReturnCorrectResult(): void
     {
         // Arrange
@@ -524,9 +497,6 @@ class PriceProductOfferFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testExpandWishlistItemWithPrices(): void
     {
         /*

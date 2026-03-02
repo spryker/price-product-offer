@@ -33,25 +33,16 @@ class ValidCurrencyAssignedToStoreConstraint extends SymfonyConstraint
         parent::__construct($options);
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Dependency\Facade\PriceProductOfferToStoreFacadeInterface
-     */
     public function getStoreFacade(): PriceProductOfferToStoreFacadeInterface
     {
         return $this->storeFacade;
     }
 
-    /**
-     * @return string
-     */
     public function getMessage(): string
     {
         return static::MESSAGE;
     }
 
-    /**
-     * @return string
-     */
     public function getTargets(): string
     {
         return static::CLASS_CONSTRAINT;

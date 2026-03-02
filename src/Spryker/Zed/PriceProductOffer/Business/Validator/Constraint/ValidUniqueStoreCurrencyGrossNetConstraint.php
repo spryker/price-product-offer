@@ -33,25 +33,16 @@ class ValidUniqueStoreCurrencyGrossNetConstraint extends SymfonyConstraint
         parent::__construct($options);
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Persistence\PriceProductOfferRepositoryInterface
-     */
     public function getPriceProductOfferRepository(): PriceProductOfferRepositoryInterface
     {
         return $this->priceProductOfferRepository;
     }
 
-    /**
-     * @return string
-     */
     public function getMessage(): string
     {
         return static::MESSAGE;
     }
 
-    /**
-     * @return string
-     */
     public function getTargets(): string
     {
         return static::CLASS_CONSTRAINT;

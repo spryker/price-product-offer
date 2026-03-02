@@ -18,17 +18,11 @@ use Spryker\Zed\PriceProductOffer\Persistence\Propel\Mapper\PriceProductOfferMap
  */
 class PriceProductOfferPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\PriceProductOffer\Persistence\SpyPriceProductOfferQuery
-     */
     public function getPriceProductOfferPropelQuery(): SpyPriceProductOfferQuery
     {
         return SpyPriceProductOfferQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Persistence\Propel\Mapper\PriceProductOfferMapper
-     */
     public function createPriceProductOfferMapper(): PriceProductOfferMapper
     {
         return new PriceProductOfferMapper();

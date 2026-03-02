@@ -18,20 +18,12 @@ class PriceProductOfferDeleter implements PriceProductOfferDeleterInterface
      */
     protected $priceProductOfferEntityManager;
 
-    /**
-     * @param \Spryker\Zed\PriceProductOffer\Persistence\PriceProductOfferEntityManagerInterface $priceProductOfferEntityManager
-     */
     public function __construct(
         PriceProductOfferEntityManagerInterface $priceProductOfferEntityManager
     ) {
         $this->priceProductOfferEntityManager = $priceProductOfferEntityManager;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductOfferCollectionTransfer $priceProductOfferCollectionTransfer
-     *
-     * @return void
-     */
     public function deleteProductOfferPrices(PriceProductOfferCollectionTransfer $priceProductOfferCollectionTransfer): void
     {
         $priceProductOfferCriteriaTransfer = new PriceProductOfferCriteriaTransfer();

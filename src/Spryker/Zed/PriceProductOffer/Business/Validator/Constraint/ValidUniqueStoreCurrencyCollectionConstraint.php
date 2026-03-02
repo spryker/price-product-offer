@@ -16,17 +16,11 @@ class ValidUniqueStoreCurrencyCollectionConstraint extends SymfonyConstraint
      */
     protected const MESSAGE = 'The set of Store and Currency needs to be unique.';
 
-    /**
-     * @return string
-     */
     public function getMessage(): string
     {
         return static::MESSAGE;
     }
 
-    /**
-     * @return string
-     */
     public function getTargets(): string
     {
         return static::CLASS_CONSTRAINT;

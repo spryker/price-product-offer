@@ -40,9 +40,6 @@ use Symfony\Component\Validator\Constraint as SymfonyConstraint;
  */
 class PriceProductOfferBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Business\Writer\PriceProductOfferWriterInterface
-     */
     public function createPriceProductOfferWriter(): PriceProductOfferWriterInterface
     {
         return new PriceProductOfferWriter(
@@ -52,9 +49,6 @@ class PriceProductOfferBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Business\Deleter\PriceProductOfferDeleterInterface
-     */
     public function createPriceProductOfferDeleter(): PriceProductOfferDeleterInterface
     {
         return new PriceProductOfferDeleter(
@@ -62,17 +56,11 @@ class PriceProductOfferBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Business\Expander\ProductOfferExpanderInterface
-     */
     public function createProductOfferExpander(): ProductOfferExpanderInterface
     {
         return new ProductOfferExpander($this->createPriceProductOfferReader());
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Business\Validator\PriceProductOfferValidatorInterface
-     */
     public function createPriceProductOfferValidator(): PriceProductOfferValidatorInterface
     {
         return new PriceProductOfferValidator(
@@ -95,9 +83,6 @@ class PriceProductOfferBusinessFactory extends AbstractBusinessFactory
         ];
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Business\Validator\PriceProductOfferConstraintProviderInterface
-     */
     public function createPriceProductOfferConstraintProvider(): PriceProductOfferConstraintProviderInterface
     {
         return new PriceProductOfferConstraintProvider(
@@ -105,17 +90,11 @@ class PriceProductOfferBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Business\Validator\PriceProductConstraintProviderInterface
-     */
     public function createPriceProductConstraintProvider(): PriceProductConstraintProviderInterface
     {
         return new PriceProductConstraintProvider();
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Business\Reader\PriceProductOfferReaderInterface
-     */
     public function createPriceProductOfferReader(): PriceProductOfferReaderInterface
     {
         return new PriceProductOfferReader(
@@ -125,9 +104,6 @@ class PriceProductOfferBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Business\Expander\Wishlist\PriceProductOfferWishlistExpanderInterface
-     */
     public function createPriceProductOfferWishlistExpander(): PriceProductOfferWishlistExpanderInterface
     {
         return new PriceProductOfferWishlistExpander(
@@ -136,25 +112,16 @@ class PriceProductOfferBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Dependency\Facade\PriceProductOfferToPriceProductFacadeInterface
-     */
     public function getPriceProductFacade(): PriceProductOfferToPriceProductFacadeInterface
     {
         return $this->getProvidedDependency(PriceProductOfferDependencyProvider::FACADE_PRICE_PRODUCT);
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraint
-     */
     public function createValidUniqueStoreCurrencyGrossNetPriceDataConstraint(): SymfonyConstraint
     {
         return new ValidUniqueStoreCurrencyGrossNetConstraint($this->getRepository());
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraint
-     */
     public function createValidCurrencyAssignedToStoreConstraint(): SymfonyConstraint
     {
         return new ValidCurrencyAssignedToStoreConstraint(
@@ -162,17 +129,11 @@ class PriceProductOfferBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Dependency\Facade\PriceProductOfferToStoreFacadeInterface
-     */
     public function getStoreFacade(): PriceProductOfferToStoreFacadeInterface
     {
         return $this->getProvidedDependency(PriceProductOfferDependencyProvider::FACADE_STORE);
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Dependency\External\PriceProductOfferToValidationAdapterInterface
-     */
     public function getValidationAdapter(): PriceProductOfferToValidationAdapterInterface
     {
         return $this->getProvidedDependency(PriceProductOfferDependencyProvider::EXTERNAL_ADAPTER_VALIDATION);
@@ -202,9 +163,6 @@ class PriceProductOfferBusinessFactory extends AbstractBusinessFactory
         return $this->getProvidedDependency(PriceProductOfferDependencyProvider::PLUGINS_PRICE_PRODUCT_OFFER_VALIDATOR);
     }
 
-    /**
-     * @return \Spryker\Zed\PriceProductOffer\Dependency\Facade\PriceProductOfferToTranslatorFacadeInterface
-     */
     public function getTranslatorFacade(): PriceProductOfferToTranslatorFacadeInterface
     {
         return $this->getProvidedDependency(PriceProductOfferDependencyProvider::FACADE_TRANSLATOR);

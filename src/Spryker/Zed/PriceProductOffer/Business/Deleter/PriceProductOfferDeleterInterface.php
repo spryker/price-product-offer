@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\PriceProductOfferCollectionTransfer;
 
 interface PriceProductOfferDeleterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductOfferCollectionTransfer $priceProductOfferCollectionTransfer
-     *
-     * @return void
-     */
     public function deleteProductOfferPrices(PriceProductOfferCollectionTransfer $priceProductOfferCollectionTransfer): void;
 }

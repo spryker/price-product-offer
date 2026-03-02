@@ -27,9 +27,6 @@ use Spryker\Zed\PropelOrm\Business\Runtime\ActiveQuery\Criteria;
  */
 class PriceProductOfferRepository extends AbstractRepository implements PriceProductOfferRepositoryInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\QueryCriteriaTransfer
-     */
     public function createQueryCriteriaTransfer(): QueryCriteriaTransfer
     {
         return (new QueryCriteriaTransfer())
@@ -85,11 +82,6 @@ class PriceProductOfferRepository extends AbstractRepository implements PricePro
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer
-     *
-     * @return int
-     */
     public function count(PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer): int
     {
         /** @var \Orm\Zed\PriceProductOffer\Persistence\SpyPriceProductOfferQuery $priceProductOfferQuery */
@@ -102,12 +94,6 @@ class PriceProductOfferRepository extends AbstractRepository implements PricePro
         return $priceProductOfferQuery->count();
     }
 
-    /**
-     * @param \Orm\Zed\PriceProductOffer\Persistence\SpyPriceProductOfferQuery $priceProductOfferQuery
-     * @param \Generated\Shared\Transfer\PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer
-     *
-     * @return void
-     */
     protected function applyCriteria(
         SpyPriceProductOfferQuery $priceProductOfferQuery,
         PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer
@@ -172,11 +158,6 @@ class PriceProductOfferRepository extends AbstractRepository implements PricePro
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductOfferCollectionTransfer
-     */
     public function getPriceProductOfferCollection(PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer): PriceProductOfferCollectionTransfer
     {
         $priceProductOfferCollectionTransfer = new PriceProductOfferCollectionTransfer();
@@ -198,12 +179,6 @@ class PriceProductOfferRepository extends AbstractRepository implements PricePro
             );
     }
 
-    /**
-     * @param \Orm\Zed\PriceProductOffer\Persistence\SpyPriceProductOfferQuery $priceProductOfferQuery
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return \Orm\Zed\PriceProductOffer\Persistence\SpyPriceProductOfferQuery
-     */
     protected function applyPriceProductOfferPagination(
         SpyPriceProductOfferQuery $priceProductOfferQuery,
         PaginationTransfer $paginationTransfer

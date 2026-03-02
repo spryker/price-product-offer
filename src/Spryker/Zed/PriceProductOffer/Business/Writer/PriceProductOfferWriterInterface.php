@@ -12,17 +12,7 @@ use Generated\Shared\Transfer\ProductOfferTransfer;
 
 interface PriceProductOfferWriterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferTransfer $productOfferTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferTransfer
-     */
     public function saveProductOfferPrices(ProductOfferTransfer $productOfferTransfer): ProductOfferTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductTransfer
-     */
     public function savePriceProductOfferRelation(PriceProductTransfer $priceProductTransfer): PriceProductTransfer;
 }

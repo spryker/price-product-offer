@@ -18,19 +18,11 @@ class ProductOfferExpander implements ProductOfferExpanderInterface
      */
     protected $priceProductOfferReader;
 
-    /**
-     * @param \Spryker\Zed\PriceProductOffer\Business\Reader\PriceProductOfferReaderInterface $priceProductOfferReader
-     */
     public function __construct(PriceProductOfferReaderInterface $priceProductOfferReader)
     {
         $this->priceProductOfferReader = $priceProductOfferReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferTransfer $productOfferTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferTransfer
-     */
     public function expandProductOfferWithPrices(ProductOfferTransfer $productOfferTransfer): ProductOfferTransfer
     {
         $productOfferTransfer->requireIdProductOffer();

@@ -33,11 +33,6 @@ class PriceProductOfferWriter implements PriceProductOfferWriterInterface
      */
     protected $priceProductOfferRepository;
 
-    /**
-     * @param \Spryker\Zed\PriceProductOffer\Dependency\Facade\PriceProductOfferToPriceProductFacadeInterface $priceProductFacade
-     * @param \Spryker\Zed\PriceProductOffer\Persistence\PriceProductOfferEntityManagerInterface $priceProductOfferEntityManager
-     * @param \Spryker\Zed\PriceProductOffer\Persistence\PriceProductOfferRepositoryInterface $priceProductOfferRepository
-     */
     public function __construct(
         PriceProductOfferToPriceProductFacadeInterface $priceProductFacade,
         PriceProductOfferEntityManagerInterface $priceProductOfferEntityManager,
@@ -48,11 +43,6 @@ class PriceProductOfferWriter implements PriceProductOfferWriterInterface
         $this->priceProductOfferRepository = $priceProductOfferRepository;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferTransfer $productOfferTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferTransfer
-     */
     public function saveProductOfferPrices(ProductOfferTransfer $productOfferTransfer): ProductOfferTransfer
     {
         $productConcreteTransfer = (new ProductConcreteTransfer())
@@ -65,11 +55,6 @@ class PriceProductOfferWriter implements PriceProductOfferWriterInterface
         return $productOfferTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductTransfer
-     */
     public function savePriceProductOfferRelation(PriceProductTransfer $priceProductTransfer): PriceProductTransfer
     {
         /** @var \Generated\Shared\Transfer\PriceProductDimensionTransfer $priceDimensionTransfer */

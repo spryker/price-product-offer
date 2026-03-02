@@ -31,9 +31,6 @@ class PriceProductOfferBusinessTester extends Actor
 {
     use _generated\PriceProductOfferBusinessTesterActions;
 
-    /**
-     * @return void
-     */
     public function ensurePriceProductOfferTableIsEmpty(): void
     {
         $priceProductOfferQuery = $this->getPriceProductOfferPropelQuery();
@@ -41,11 +38,6 @@ class PriceProductOfferBusinessTester extends Actor
         $priceProductOfferQuery->deleteAll();
     }
 
-    /**
-     * @param int $idProductOffer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductOfferTransfer
-     */
     public function getPriceProductOfferByIdProductOffer(int $idProductOffer): PriceProductOfferTransfer
     {
         $priceProductOfferEntity = $this->getPriceProductOfferPropelQuery()
@@ -81,9 +73,6 @@ class PriceProductOfferBusinessTester extends Actor
         return $priceProductTransfer;
     }
 
-    /**
-     * @return \Orm\Zed\PriceProductOffer\Persistence\SpyPriceProductOfferQuery
-     */
     protected function getPriceProductOfferPropelQuery(): SpyPriceProductOfferQuery
     {
         return SpyPriceProductOfferQuery::create();

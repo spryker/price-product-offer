@@ -34,9 +34,6 @@ class PriceProductConstraintProvider implements PriceProductConstraintProviderIn
         return [new TransferConstraint([PriceProductTransfer::MONEY_VALUE => $this->getMoneyValueConstraint()])];
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraint
-     */
     protected function getMoneyValueConstraint(): SymfonyConstraint
     {
         return new TransferConstraint([
@@ -47,9 +44,6 @@ class PriceProductConstraintProvider implements PriceProductConstraintProviderIn
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraint
-     */
     protected function getNetAmountConstraint(): SymfonyConstraint
     {
         return new GreaterThanOrEqualOrEmptyConstraint([
@@ -58,9 +52,6 @@ class PriceProductConstraintProvider implements PriceProductConstraintProviderIn
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraint
-     */
     protected function getGrossAmountConstraint(): SymfonyConstraint
     {
         return new GreaterThanOrEqualOrEmptyConstraint([
@@ -69,9 +60,6 @@ class PriceProductConstraintProvider implements PriceProductConstraintProviderIn
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraint
-     */
     protected function getCurrencyConstraint(): SymfonyConstraint
     {
         return new NotBlank([
@@ -79,9 +67,6 @@ class PriceProductConstraintProvider implements PriceProductConstraintProviderIn
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraint
-     */
     protected function getStoreConstraint(): SymfonyConstraint
     {
         return new NotBlank([

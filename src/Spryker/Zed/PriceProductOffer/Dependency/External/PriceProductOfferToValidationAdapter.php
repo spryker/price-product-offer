@@ -12,9 +12,6 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class PriceProductOfferToValidationAdapter implements PriceProductOfferToValidationAdapterInterface
 {
-    /**
-     * @return \Symfony\Component\Validator\Validator\ValidatorInterface
-     */
     public function createValidator(): ValidatorInterface
     {
         return Validation::createValidator();

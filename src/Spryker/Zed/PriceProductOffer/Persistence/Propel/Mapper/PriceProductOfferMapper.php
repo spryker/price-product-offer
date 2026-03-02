@@ -31,12 +31,6 @@ use RuntimeException;
 
 class PriceProductOfferMapper
 {
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     * @param \Orm\Zed\PriceProductOffer\Persistence\SpyPriceProductOffer $priceProductOfferEntity
-     *
-     * @return \Orm\Zed\PriceProductOffer\Persistence\SpyPriceProductOffer
-     */
     public function mapPriceProductTransferToPriceProductOfferEntity(
         PriceProductTransfer $priceProductTransfer,
         SpyPriceProductOffer $priceProductOfferEntity
@@ -74,12 +68,6 @@ class PriceProductOfferMapper
         return $priceProductTransfers;
     }
 
-    /**
-     * @param \Orm\Zed\PriceProductOffer\Persistence\SpyPriceProductOffer $priceProductOfferEntity
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductTransfer
-     */
     public function mapPriceProductOfferEntityToPriceProductTransfer(
         SpyPriceProductOffer $priceProductOfferEntity,
         PriceProductTransfer $priceProductTransfer
@@ -119,12 +107,6 @@ class PriceProductOfferMapper
         return $priceProductOfferCollectionTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\PriceProduct\Persistence\SpyPriceProductStore $priceProductStoreEntity
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductTransfer
-     */
     protected function mapPriceProductStoreEntityToPriceProductTransfer(
         SpyPriceProductStore $priceProductStoreEntity,
         PriceProductTransfer $priceProductTransfer
@@ -147,12 +129,6 @@ class PriceProductOfferMapper
         return $priceProductTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\PriceProduct\Persistence\SpyPriceProductStore $priceProductStoreEntity
-     * @param \Generated\Shared\Transfer\MoneyValueTransfer $moneyValueTransfer
-     *
-     * @return \Generated\Shared\Transfer\MoneyValueTransfer
-     */
     protected function mapPriceProductStoreEntityToMoneyValueTransfer(
         SpyPriceProductStore $priceProductStoreEntity,
         MoneyValueTransfer $moneyValueTransfer
@@ -173,12 +149,6 @@ class PriceProductOfferMapper
         return $moneyValueTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\PriceProduct\Persistence\SpyPriceType $priceTypeEntity
-     * @param \Generated\Shared\Transfer\PriceTypeTransfer $priceTypeTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceTypeTransfer
-     */
     protected function mapPriceTypeEntityToPriceTypeTransfer(
         SpyPriceType $priceTypeEntity,
         PriceTypeTransfer $priceTypeTransfer
@@ -186,34 +156,16 @@ class PriceProductOfferMapper
         return $priceTypeTransfer->fromArray($priceTypeEntity->toArray(), true);
     }
 
-    /**
-     * @param \Orm\Zed\Currency\Persistence\SpyCurrency $currencyEntity
-     * @param \Generated\Shared\Transfer\CurrencyTransfer $currencyTransfer
-     *
-     * @return \Generated\Shared\Transfer\CurrencyTransfer
-     */
     protected function mapCurrencyEntityToTransfer(SpyCurrency $currencyEntity, CurrencyTransfer $currencyTransfer): CurrencyTransfer
     {
         return $currencyTransfer->fromArray($currencyEntity->toArray(), true);
     }
 
-    /**
-     * @param \Orm\Zed\Store\Persistence\SpyStore $storeEntity
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     protected function mapStoreEntityToStoreTransfer(SpyStore $storeEntity, StoreTransfer $storeTransfer): StoreTransfer
     {
         return $storeTransfer->fromArray($storeEntity->toArray(), true);
     }
 
-    /**
-     * @param \Orm\Zed\PriceProductOffer\Persistence\SpyPriceProductOffer $priceProductOfferEntity
-     * @param \Generated\Shared\Transfer\PriceProductOfferTransfer $priceProductOfferTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductOfferTransfer
-     */
     protected function mapPriceProductOfferEntityToPriceProductOfferTransfer(
         SpyPriceProductOffer $priceProductOfferEntity,
         PriceProductOfferTransfer $priceProductOfferTransfer

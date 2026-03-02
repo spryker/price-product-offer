@@ -22,11 +22,6 @@ class PriceProductOfferHelper extends Module
     use DataCleanupHelperTrait;
     use LocatorHelperTrait;
 
-    /**
-     * @param array $seedData
-     *
-     * @return \Generated\Shared\Transfer\PriceProductOfferTransfer
-     */
     public function havePriceProductOffer(array $seedData = []): PriceProductOfferTransfer
     {
         $priceProductOfferTransfer = $this->createPriceProductOfferDependencies($seedData);
@@ -45,11 +40,6 @@ class PriceProductOfferHelper extends Module
         return $priceProductOfferTransfer;
     }
 
-    /**
-     * @param array $seedData
-     *
-     * @return \Generated\Shared\Transfer\PriceProductOfferTransfer
-     */
     protected function createPriceProductOfferDependencies(array $seedData): PriceProductOfferTransfer
     {
         $priceProductOfferTransfer = (new PriceProductOfferTransfer())->fromArray($seedData, true);
@@ -67,9 +57,6 @@ class PriceProductOfferHelper extends Module
         return $priceProductOfferTransfer;
     }
 
-    /**
-     * @return \SprykerTest\Zed\ProductOffer\Helper\ProductOfferHelper
-     */
     protected function getProductOfferHelper(): ProductOfferHelper
     {
         /** @var \SprykerTest\Zed\ProductOffer\Helper\ProductOfferHelper $productOfferHelper */
@@ -78,9 +65,6 @@ class PriceProductOfferHelper extends Module
         return $productOfferHelper;
     }
 
-    /**
-     * @return \SprykerTest\Shared\Currency\Helper\CurrencyDataHelper
-     */
     protected function getCurrencyDataHelper(): CurrencyDataHelper
     {
         /** @var \SprykerTest\Shared\Currency\Helper\CurrencyDataHelper $currencyDataHelper */
@@ -89,9 +73,6 @@ class PriceProductOfferHelper extends Module
         return $currencyDataHelper;
     }
 
-    /**
-     * @return \SprykerTest\Shared\Store\Helper\StoreDataHelper
-     */
     protected function getStoreDataHelper(): StoreDataHelper
     {
         /** @var \SprykerTest\Shared\Store\Helper\StoreDataHelper $storeDataHelper */
@@ -100,9 +81,6 @@ class PriceProductOfferHelper extends Module
         return $storeDataHelper;
     }
 
-    /**
-     * @return \SprykerTest\Shared\PriceProduct\Helper\PriceProductDataHelper
-     */
     protected function getPriceProductDataHelper(): PriceProductDataHelper
     {
         /** @var \SprykerTest\Shared\PriceProduct\Helper\PriceProductDataHelper $priceProductDataHelper */

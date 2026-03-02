@@ -104,11 +104,6 @@ class ValidUniqueStoreCurrencyGrossNetConstraintValidator extends AbstractConstr
             ->getProductOfferPrices($priceProductOfferCriteriaTransfer);
     }
 
-    /**
-     * @param int $priceProductIndex
-     *
-     * @return string
-     */
     protected function createViolationPath(int $priceProductIndex): string
     {
         return sprintf(

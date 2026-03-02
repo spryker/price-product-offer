@@ -14,9 +14,6 @@ use Generated\Shared\Transfer\QueryCriteriaTransfer;
 
 interface PriceProductOfferRepositoryInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\QueryCriteriaTransfer
-     */
     public function createQueryCriteriaTransfer(): QueryCriteriaTransfer;
 
     /**
@@ -26,17 +23,7 @@ interface PriceProductOfferRepositoryInterface
      */
     public function getProductOfferPrices(PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer): ArrayObject;
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer
-     *
-     * @return int
-     */
     public function count(PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer): int;
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductOfferCollectionTransfer
-     */
     public function getPriceProductOfferCollection(PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer): PriceProductOfferCollectionTransfer;
 }

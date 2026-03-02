@@ -17,11 +17,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class PriceProductOfferEntityManager extends AbstractEntityManager implements PriceProductOfferEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductTransfer
-     */
     public function createPriceProductOfferRelation(PriceProductTransfer $priceProductTransfer): PriceProductTransfer
     {
         $priceProductOfferMapper = $this->getFactory()->createPriceProductOfferMapper();
@@ -39,11 +34,6 @@ class PriceProductOfferEntityManager extends AbstractEntityManager implements Pr
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductTransfer
-     */
     public function updatePriceProductOfferRelation(PriceProductTransfer $priceProductTransfer): PriceProductTransfer
     {
         /** @var \Generated\Shared\Transfer\PriceProductDimensionTransfer $priceDimensionTransfer */
@@ -74,11 +64,6 @@ class PriceProductOfferEntityManager extends AbstractEntityManager implements Pr
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer
-     *
-     * @return void
-     */
     public function delete(PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer): void
     {
         /** @var \Propel\Runtime\Collection\ObjectCollection $priceProductOfferCollection */

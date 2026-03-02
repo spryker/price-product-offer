@@ -31,9 +31,6 @@ class GetPriceProductOfferCollectionTest extends Unit
      */
     protected PriceProductOfferBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testGetPriceProductOfferCollectionWithFivePriceProductOffersWhileHavingLimitOffsetPaginationApplied(): void
     {
         // Arrange

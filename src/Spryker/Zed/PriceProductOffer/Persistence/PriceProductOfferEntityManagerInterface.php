@@ -12,24 +12,9 @@ use Generated\Shared\Transfer\PriceProductTransfer;
 
 interface PriceProductOfferEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductTransfer
-     */
     public function createPriceProductOfferRelation(PriceProductTransfer $priceProductTransfer): PriceProductTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductTransfer $priceProductTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductTransfer
-     */
     public function updatePriceProductOfferRelation(PriceProductTransfer $priceProductTransfer): PriceProductTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer
-     *
-     * @return void
-     */
     public function delete(PriceProductOfferCriteriaTransfer $priceProductOfferCriteriaTransfer): void;
 }

@@ -54,11 +54,6 @@ class PriceProductOfferDependencyProvider extends AbstractBundleDependencyProvid
      */
     public const PLUGINS_PRICE_PRODUCT_OFFER_VALIDATOR = 'PLUGINS_PRICE_PRODUCT_OFFER_VALIDATOR';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = $this->addPriceProductFacade($container);
@@ -73,11 +68,6 @@ class PriceProductOfferDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPriceProductFacade(Container $container): Container
     {
         $container->set(static::FACADE_PRICE_PRODUCT, function (Container $container) {
@@ -89,11 +79,6 @@ class PriceProductOfferDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreFacadeFacade(Container $container): Container
     {
         $container->set(static::FACADE_STORE, function (Container $container) {
@@ -105,11 +90,6 @@ class PriceProductOfferDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addValidationAdapter(Container $container): Container
     {
         $container->set(static::EXTERNAL_ADAPTER_VALIDATION, function () {
@@ -119,11 +99,6 @@ class PriceProductOfferDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addTranslatorFacade(Container $container): Container
     {
         $container->set(static::FACADE_TRANSLATOR, function (Container $container) {
@@ -135,11 +110,6 @@ class PriceProductOfferDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPriceProductOfferExtractorPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_PRICE_PRODUCT_OFFER_EXTRACTOR, function () {
@@ -149,11 +119,6 @@ class PriceProductOfferDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPriceProductOfferValidatorPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_PRICE_PRODUCT_OFFER_VALIDATOR, function () {
@@ -163,11 +128,6 @@ class PriceProductOfferDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPriceProductOfferExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_PRICE_PRODUCT_OFFER_EXPANDER, function () {
