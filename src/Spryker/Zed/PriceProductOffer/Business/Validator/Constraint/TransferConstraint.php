@@ -58,7 +58,7 @@ class TransferConstraint extends Composite
     /**
      * @return array<string>
      */
-    public function getRequiredOptions()
+    public function getRequiredOptions(): array
     {
         return [static::FIELDS];
     }
